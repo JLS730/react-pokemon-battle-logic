@@ -1,13 +1,369 @@
-body {
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.background {
+  height: 927px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
+.background .display-screen {
+  height: 800px;
+  width: 1200px;
+  border: 2px solid black;
+}
+
+.background .display-screen .enemy-hud {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 290px;
+  width: 100%;
+}
+
+.background .display-screen .enemy-hud .health-container {
+  height: 100%;
+  width: 600px;
+  padding: 30px;
+}
+
+.background .display-screen .enemy-hud .health-container .enemy-health-container {
+  border: 3px solid #363636;
+  width: 460px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #fffbca;
+}
+
+.background .display-screen .enemy-hud .health-container .enemy-health-container .name-level {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: sans-serif;
+  padding: 0 15px;
+}
+
+.background .display-screen .enemy-hud .health-container .enemy-health-container .enemy-health-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+  padding: 0 20px;
+}
+
+.background .display-screen .enemy-hud .health-container .enemy-health-container .enemy-health-bar .enemy-health-bar-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: gray;
+  width: 232px;
+  border-radius: 20px;
+}
+
+.background .display-screen .enemy-hud .health-container .enemy-health-container .enemy-health-bar .enemy-health-bar-container .hp {
+  text-align: right;
+  color: orange;
+  width: 30px;
+  font-family: sans-serif;
+}
+
+.background .display-screen .enemy-hud .health-container .enemy-health-container .enemy-health-bar .enemy-health-bar-container .enemy-bar {
+  height: 16px;
+  width: 200px;
+  background-color: chartreuse;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.background .display-screen .enemy-hud .enemy-player-sprite-container {
+  position: relative;
+  height: 100%;
+  width: 600px;
+}
+
+.background .display-screen .enemy-hud .enemy-player-sprite-container .enemy-sprite {
+  position: absolute;
+  z-index: 1;
+  height: 200px;
+  width: 120px;
+  background-color: red;
+  left: 240px;
+  top: 30px;
+}
+
+.background .display-screen .enemy-hud .enemy-player-sprite-container .enemy-sprite-platform {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 130px;
+  width: 330px;
+  border: 5px solid #3b3b3b;
+  border-radius: 50%;
+  left: 135px;
+  top: 150px;
+}
+
+.background .display-screen .enemy-hud .enemy-player-sprite-container .enemy-sprite-platform .enemy-sprite-inner-platform {
+  height: 110px;
+  width: 310px;
+  border-radius: 50%;
+  background-color: #a2ffb6;
+}
+
+.background .display-screen .player-hud {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  height: 290px;
+  width: 100%;
+}
+
+.background .display-screen .player-hud .health-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 100%;
+  width: 600px;
+  padding: 30px;
+}
+
+.background .display-screen .player-hud .health-container .player-health-container {
+  border: 3px solid #363636;
+  width: 460px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #fffbca;
+}
+
+.background .display-screen .player-hud .health-container .player-health-container .name-level {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: sans-serif;
+  padding: 0 15px;
+}
+
+.background .display-screen .player-hud .health-container .player-health-container .player-health-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+  padding: 0 20px;
+}
+
+.background .display-screen .player-hud .health-container .player-health-container .player-health-bar .player-health-bar-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: gray;
+  width: 232px;
+  border-radius: 20px;
+}
+
+.background .display-screen .player-hud .health-container .player-health-container .player-health-bar .player-health-bar-container .hp {
+  text-align: right;
+  color: orange;
+  width: 30px;
+  font-family: sans-serif;
+}
+
+.background .display-screen .player-hud .health-container .player-health-container .player-health-bar .player-health-bar-container .player-bar {
+  height: 16px;
+  width: 200px;
+  background-color: chartreuse;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.background .display-screen .player-hud .player-sprite-container {
+  position: relative;
+  height: 100%;
+  width: 600px;
+}
+
+.background .display-screen .player-hud .player-sprite-container .player-sprite {
+  position: absolute;
+  z-index: 1;
+  height: 200px;
+  width: 120px;
+  background-color: blue;
+  left: 240px;
+  top: 30px;
+}
+
+.background .display-screen .player-hud .player-sprite-container .player-sprite-platform {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 130px;
+  width: 330px;
+  border: 5px solid #3b3b3b;
+  border-radius: 50%;
+  left: 135px;
+  top: 150px;
+}
+
+.background .display-screen .player-hud .player-sprite-container .player-sprite-platform .player-sprite-inner-platform {
+  height: 110px;
+  width: 310px;
+  border-radius: 50%;
+  background-color: #a2ffb6;
+}
+
+.background .display-screen .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 217px;
+  width: 100%;
+}
+
+.background .display-screen .menu .main-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  border-top: 2px solid black;
+  font-family: sans-serif;
+}
+
+.background .display-screen .menu .main-menu .main-menu-text {
+  width: 700px;
+  font-size: 60px;
+  padding-left: 15px;
+}
+
+.background .display-screen .menu .main-menu .main-menu-selection-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  justify-items: flex-start;
+  -ms-flex-line-pack: space-evenly;
+      align-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 487px;
+  height: 100%;
+  background-color: gray;
+  border-left: 2px solid black;
+  padding-left: 60px;
+}
+
+.background .display-screen .menu .main-menu .main-menu-selection-container .fight-selection i,
+.background .display-screen .menu .main-menu .main-menu-selection-container .bag-selection i,
+.background .display-screen .menu .main-menu .main-menu-selection-container .pokemon-selection i,
+.background .display-screen .menu .main-menu .main-menu-selection-container .run-selection i {
+  visibility: hidden;
+}
+
+.background .display-screen .menu .main-menu .main-menu-selection-container .fight-selection.active i,
+.background .display-screen .menu .main-menu .main-menu-selection-container .bag-selection.active i,
+.background .display-screen .menu .main-menu .main-menu-selection-container .pokemon-selection.active i,
+.background .display-screen .menu .main-menu .main-menu-selection-container .run-selection.active i {
+  visibility: visible;
+}
+/*# sourceMappingURL=index.css.map */
